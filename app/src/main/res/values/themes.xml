@@ -1,3 +1,4 @@
 <resources>
+    <!-- App theme parent only for Android's view system; Compose uses MaterialTheme -->
     <style name="Theme.VDSteelMind" parent="Theme.MaterialComponents.DayNight.NoActionBar"/>
 </resources>
