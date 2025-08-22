@@ -36,8 +36,10 @@ android {
         kotlinCompilerExtensionVersion = "1.5.14"
     }
 
-    kotlinOptions {
-        jvmTarget = "17"
+    // *** KEY FIX: align Java compile to 17 ***
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     packaging {
@@ -45,6 +47,11 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+}
+
+// *** KEY FIX: align Kotlin toolchain/jvmTarget to 17 (affects KSP as well) ***
+kotlin {
+    jvmToolchain(17)
 }
 
 dependencies {
@@ -65,7 +72,7 @@ dependencies {
     implementation("androidx.compose.material3:material3:1.2.1")
     implementation("androidx.navigation:navigation-compose:2.7.7")
 
-    // Material Components (for App theme parent in XML)
+    // Material Components (for XML theme parent)
     implementation("com.google.android.material:material:1.12.0")
 
     // Room
