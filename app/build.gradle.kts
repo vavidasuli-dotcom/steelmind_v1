@@ -48,10 +48,7 @@ android {
 }
 
 dependencies {
-    // ...
-    implementation("com.google.android.material:material:1.12.0")
-}
-
+    // Compose BOM
     val composeBom = platform("androidx.compose:compose-bom:2024.06.00")
     implementation(composeBom)
     androidTestImplementation(composeBom)
@@ -60,11 +57,16 @@ dependencies {
     implementation("androidx.activity:activity-compose:1.9.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.3")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.3")
+
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-tooling-preview")
     debugImplementation("androidx.compose.ui:ui-tooling")
+
     implementation("androidx.compose.material3:material3:1.2.1")
     implementation("androidx.navigation:navigation-compose:2.7.7")
+
+    // Material Components (for App theme parent in XML)
+    implementation("com.google.android.material:material:1.12.0")
 
     // Room
     implementation("androidx.room:room-ktx:2.6.1")
